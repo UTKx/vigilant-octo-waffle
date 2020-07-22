@@ -13,7 +13,7 @@ def index(request):
         form = TodoListForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('show')
+            # return redirect('show')
     else:
         form = TodoListForm()
 
@@ -21,7 +21,7 @@ def index(request):
         form = TodoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('show')
+            # return redirect('show')
     else:
         form = TodoForm()
 
