@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block nav %}
+<div class="sidebar">
+    {% for list in lists %}
+    <ul>
+        <li>
+            <div>
+                <a href="{% url 'show' list.id %}">{{list}}</a>
+            </div>
+        </li>
+    </ul>
+    {% endfor %}
+    <form action="" method="post">
+        {{listform.name}}
+    </form>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="content-title">
+    <!-- {{curlist}} -->
+</div>
+<div class="content-wrapper">
+    {% for todo in todos %}
+        <div>{{todo}}</div>
+    {% endfor %}
+</div>
+{% endblock %}

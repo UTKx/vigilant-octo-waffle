@@ -1,5 +1,27 @@
 {% extends 'main.html' %}
 
+{% block nav %}
+<div class="sidebar">
+    {% for list in lists %}
+    <ul>
+        <li>
+            <div>
+                <a href="{% url 'show' list.id %}">{{list}}</a>
+            </div>
+        </li>
+    </ul>
+    {% endfor %}
+    <form action="" method="post">
+        {{listform.name}}
+    </form>
+</div>
+{% endblock %}
+
 {% block content %}
-sdfsf
+<div class="content-title">Tasks</div>
+<div class="content-wrapper">
+    {% for task in tasks %}
+        <div>{{task}}</div>
+    {% endfor %}
+</div>
 {% endblock %}

@@ -1,4 +1,18 @@
-{{lists}}
-
-{% block content %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+<body>
+    <div class="sidebar">
+        {% block nav %}
+        {% endblock %}
+    </div>
+    <div class="content-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
