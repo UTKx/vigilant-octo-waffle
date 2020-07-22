@@ -1,19 +1,26 @@
 {% extends 'main.html' %}
 
 {% block nav %}
-<div class="sidebar">
-    {% for list in lists %}
-    <ul>
-        <li>
+<div class="navbar navbar-light bg-light sidebar">
+    <ul class="navbar-nav">
+        <li class="navbar-item">
+            {% for list in lists %}
             <div>
-                <a href="{% url 'show' list.id %}">{{list}}</a>
+                <a class="navbar-link" href="{% url 'show' list.id %}">{{list}}</a>
             </div>
+            {% endfor %}
         </li>
     </ul>
-    {% endfor %}
-    <form action="" method="post">
-        {{listform.name}}
-    </form>
+</div>
+<div class="navbar navbar-light bg-light sidebar">
+    <ul class="navbar-nav">
+        <li class="navbar-item">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{listform.name}}
+            </form>
+        </li>
+    </ul>
 </div>
 {% endblock %}
 
@@ -21,7 +28,7 @@
 <div class="content-title">Tasks</div>
 <div class="content-wrapper">
     {% for task in tasks %}
-        <div>{{task}}</div>
+    <div>{{task}}</div>
     {% endfor %}
 </div>
 {% endblock %}
