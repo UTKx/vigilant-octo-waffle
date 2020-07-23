@@ -4,19 +4,21 @@
 
 {% block nav %}
     <div class="sidebar">
-        dfs
+        {% for list in lists %}
+            <div class="side-item">
+                <a href="{% url 'show' list.id %}">{{list}}</a>
+            </div>
+        {% endfor %}
+        <hr>
+        <!-- <form class="form-control listform" method="post">
+            {% csrf_token %}
+            {{listform.name}}
+        </form> -->
     </div>
 {% endblock %}
 
 {% block content %}
     <div class="content">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col mycol">eqwqewq</div>
-                    <div class="col mycol">qeqweqwe</div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 {% endblock %}
