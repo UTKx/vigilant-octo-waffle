@@ -1,0 +1,23 @@
+.sidebar, .content {
+    position: fixed;
+    width: 100px;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar {
+    width: 275px;
+    left: 0;
+    background-color: whitesmoke;
+  }
+
+  .content {
+    left: 275px;
+    width: 100%;
+    right: 0;
+    background: #DCD8F8;
+  }
+
+  .mycol {
+      border: tomato;
+  }
