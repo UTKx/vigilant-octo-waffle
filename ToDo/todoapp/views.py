@@ -7,7 +7,7 @@ from . models import TodoList, Todo
 def index(request):
     listform = TodoListForm()
     todoform = TodoForm()
-    lists = TodoList.objects.all()
+    lists = TodoList.objects.all()[2:]
     tasks = Todo.objects.filter(todolist__name='Task')
     if request.method =='POST':
         form = TodoListForm(request.POST)

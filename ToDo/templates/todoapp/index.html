@@ -1,24 +1,28 @@
-{% extends 'main.html' %}
-
-{% load static %}
-
-{% block nav %}
-    <div class="sidebar">
-        {% for list in lists %}
-            <div class="side-item">
-                <a href="{% url 'show' list.id %}">{{list}}</a>
-            </div>
-        {% endfor %}
+{% extends 'main.html' %} {% load static %} {% block nav %}
+<div class="sidebar">
+    <div class="side-item">
+        <a href="{% url 'show' 9 %}">Tasks</a>
+    </div>
+    <div class="side-item">
+        <a href="{% url 'show' 10 %}">Important</a>
+    </div>
+    <div class="container">
         <hr>
-        <!-- <form class="form-control listform" method="post">
-            {% csrf_token %}
-            {{listform.name}}
-        </form> -->
     </div>
-{% endblock %}
+    {% for list in lists %}
+    <div class="side-item">
+        <a href="{% url 'show' list.id %}">{{list}}</a>
+    </div>
+    {% endfor %}
+    <div class="myform">
+        <form method="post">
+            {% csrf_token %} {{listform.name}}
+            <button class="btn btn-light fas fa-plus"></button>
+        </form>
+    </div>
+</div>
+{% endblock %} {% block content %}
+<div class="content">
 
-{% block content %}
-    <div class="content">
-        
-    </div>
+</div>
 {% endblock %}
