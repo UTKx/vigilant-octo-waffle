@@ -1,3 +1,5 @@
+@import "https://use.fontawesome.com/releases/v5.8.1/css/solid.css";
+
 .sidebar,
 .content {
     position: fixed;
@@ -6,67 +8,99 @@
     bottom: 0;
 }
 
-hr {
-    width: 250px;
-    color: lightgray;
-}
-
 .sidebar {
     width: 275px;
     left: 0;
     background-color: white;
+    margin: 5px 0;
 }
 
 .content {
     left: 275px;
     width: 100%;
     right: 0;
-    background: #EEDFF0;
+    background: #F2E7F9;
 }
 
-.side-item:hover {
-    background: #FBF6F7;
-}
-
-.side-item {
+.sidebar-side {
     height: 45px;
     line-height: 45px;
-    padding-left: 20px;
-    padding-right: 20px;
-    vertical-align: middle;
-    text-align: left;
-    margin: 2px;
+    margin: 5px 0;
 }
 
-.side-item a {
+.sidebar-side:hover {
+    background-color: #F5EFF5;
+}
+
+.sidebar-item {
+    padding: 0 5px;
+}
+
+.sidebar-item a {
     text-decoration: none;
-    color: #232323;
+    color: #7D5294;
+}
+
+#item1 {
+    text-align: center;
+}
+
+#item2 {
+    text-align: left;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#item3 {
+    text-align: center;
+    font-size: 12px;
+    
+}
+
+
+i {
+    font-size: 18px;
+}
+
+hr {
+    margin: 10px 0;
+    color: #8F8A8F;
 }
 
 .myform {
+    margin: 0 2px;
     position: sticky;
 }
 
-input {
-    margin: none;
-    width: 217px;
+.listinput {
+    width: 220px;
     height: 45px;
-    border: none;
-    background: #F4F9F9;
-}
-
-input:hover {
-    border: none;
-    background: #F4F9F9;
-}
-
-.fas {
-    width: 50px;
+    border-style: none;
     border-radius: 5px;
-    height: 45px;
-    background: #F3E8F3;
-    margin: none;
+    outline: none;
+    background-color: #EDDCF5;
+    font-family: sans-serif, 'Font Awesome 5 Brands';
+    
+}
+
+.listinput:hover {
+    background-color: #F2E7F9;
+}
+
+.listbtn {
+    height: 46px;
+    line-height: 45px;
+    border-radius: 5px;
+    width: 45px;
+    background-color: #EDDCF5;
     border: none;
-    /* font-size: 20px; */
-    color: black;
+    color: #936DA7;
+}
+
+.listbtn:hover {
+    background-color: #F2E7F9;
+}
+
+.search {
+    font-family: 'FontAwesome';
 }

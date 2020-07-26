@@ -1,27 +1,56 @@
-{% extends 'main.html' %} {% load static %} {% block nav %}
+{% extends 'main.html' %}
+{% load static %}
+
+{% block nav %}
 <div class="sidebar">
-    <div class="side-item">
-        <a href="{% url 'show' 9 %}">Tasks</a>
+    <div class="container">
+        <input type="text" class="search" placeholder="&#xF002">
     </div>
-    <div class="side-item">
-        <a href="{% url 'show' 10 %}">Important</a>
+
+    <div class="container">
+        User Info
     </div>
+
+    <div class="row sidebar-side">
+        <div class="col-3 sidebar-item" id="item1"><i class="fas fa-home" style="color: #3063AB;"></i></div>
+        <div class="col-7 sidebar-item" id="item2">
+            <a href="{% url 'show' 9 %}" style="color: #3063AB;">Tasks</a>
+        </div>
+        <div class="col-2 sidebar-item" id="item3">2</div>
+    </div>
+    <div class="row sidebar-side">
+        <div class="col-3 sidebar-item" id="item1"><i class="fas fa-star" style="color: #AC395D;"></i></div>
+        <div class="col-7 sidebar-item" id="item2">
+            <a href="{% url 'show' 10 %}" style="color: #AC395D;">Important</a>
+        </div>
+        <div class="col-2 sidebar-item" id="item3">10</div>
+    </div>
+
     <div class="container">
         <hr>
     </div>
+
     {% for list in lists %}
-    <div class="side-item">
-        <a href="{% url 'show' list.id %}">{{list}}</a>
+    <div class="row sidebar-side">
+        <div class="col-3 sidebar-item" id="item1"><i class="fas fa-bars" style="color: #ADADAD;"></i></div>
+        <div class="col-7 sidebar-item" id="item2">
+            <a href="{% url 'show' list.id %}">{{list}}</a>
+        </div>
+        <div class="col-2 sidebar-item" id="item3">10</div>
     </div>
     {% endfor %}
+
     <div class="myform">
-        <form method="post">
-            {% csrf_token %} {{listform.name}}
-            <button class="btn btn-light fas fa-plus"></button>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{listform.name}}
+            <button class="listbtn fas fa-plus"></button>
         </form>
     </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 <div class="content">
 
 </div>

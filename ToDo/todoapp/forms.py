@@ -8,8 +8,13 @@ class TodoListForm(forms.ModelForm):
         model = TodoList
         fields = ['name']
 
+        widgets = {
+            'name' : forms.TextInput(attrs={'class': 'listinput', 'placeholder': 'New list',})
+        }
+
 class TodoForm(forms.ModelForm):
    
     class Meta:
         model = Todo
         fields = ['title']
+        
