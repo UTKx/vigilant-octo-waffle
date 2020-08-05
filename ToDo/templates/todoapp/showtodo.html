@@ -58,10 +58,12 @@
 <div class="content">
     <div class="container">
         <div class="head">
-            {{curlist}}
+            <h3>{{curlist}}</h3>
         </div>
         <div class="todolist">
-            <div>{{todos}}</div>
+            {% for todo in todos %}
+                <div>{{todo}}</div>
+            {% endfor %}
         </div>
     </div>
 </div>
