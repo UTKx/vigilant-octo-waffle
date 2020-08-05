@@ -23,8 +23,8 @@
 }
 
 .sidebar-side {
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     margin: 5px 0;
 }
 
@@ -68,19 +68,26 @@ hr {
 }
 
 .myform {
-    margin: 0 2px;
+    padding: 0 2.3px;
+    height: 40px;
+    line-height: 40px;
     position: sticky;
 }
 
 .listinput {
     width: 220px;
-    height: 45px;
+    height: 100%;
+    padding: 10px;
     border-style: none;
     border-radius: 5px;
     outline: none;
-    background-color: #EDDCF5;
-    font-family: sans-serif, 'Font Awesome 5 Brands';
+    background-color: #E9DBF0;
+    color: #936DA7;
     
+}
+
+.listinput::placeholder {
+    color: #936DA7;
 }
 
 .listinput:hover {
@@ -88,11 +95,11 @@ hr {
 }
 
 .listbtn {
-    height: 46px;
-    line-height: 45px;
+    height: 100%;
+    line-height: 40px;
     border-radius: 5px;
-    width: 45px;
-    background-color: #EDDCF5;
+    width: 46px;
+    background-color: #E9DBF0;
     border: none;
     color: #936DA7;
 }
@@ -101,6 +108,21 @@ hr {
     background-color: #F2E7F9;
 }
 
+.searchbox {
+    text-align: center;
+    line-height: 40px;
+}
+
 .search {
-    font-family: 'FontAwesome';
+    width: 100%;
+    outline: none;
+    height: 40px;
+    border: none;
+    /* border-radius: 5px; */
+    /* background-color: #F4F4F4;  */
+    padding: 10px;   
+}
+
+.search:hover {
+    background-color: #F4F4F4;
 }

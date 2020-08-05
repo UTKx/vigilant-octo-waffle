@@ -9,7 +9,7 @@ class TodoListForm(forms.ModelForm):
         fields = ['name']
 
         widgets = {
-            'name' : forms.TextInput(attrs={'class': 'listinput', 'placeholder': 'New list',})
+            'name' : forms.TextInput(attrs={'class': 'listinput', 'placeholder': 'Add new list',})
         }
 
 class TodoForm(forms.ModelForm):

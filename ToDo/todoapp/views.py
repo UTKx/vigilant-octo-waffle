@@ -29,7 +29,7 @@ def index(request):
     return render(request, 'todoapp/index.html', context)
 
 def getOrCreateTodo(request, todolist_id):
-    lists = TodoList.objects.all()
+    lists = TodoList.objects.all()[2:]
     curlist = TodoList.objects.get(id=todolist_id)
     todos = Todo.objects.filter(todolist__id=todolist_id)
     todoform = TodoForm()
