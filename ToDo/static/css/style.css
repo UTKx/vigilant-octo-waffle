@@ -1,8 +1,43 @@
-.container {
+.wrapper {
     max-width: 991px;
     margin: 0 50px;
 }
 
 .head {
     text-align: left;
+    margin-top: 30px;
+    color: #7D5294;
+}
+
+.todolist {
+    margin-top: 30px;
+}
+
+.todo {
+    background-color: white;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 2px;
+}
+
+.todoform {
+    position: fixed;
+    bottom: 30px;
+}
+
+.todoinput {
+    width: 991px;
+    border: none;
+    outline: none;
+    height: 55px;
+    padding: 10px;
+    background-color: #EDDCF5;
+    color: #936DA7;
+    border-radius: 5px;
+}
+
+.todoinput::placeholder {
+    color: #936DA7;
 }

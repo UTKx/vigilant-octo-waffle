@@ -56,14 +56,19 @@
 
 {% block content %}
 <div class="content">
-    <div class="container">
+    <div class="wrapper">
         <div class="head">
             <h3>{{curlist}}</h3>
         </div>
         <div class="todolist">
             {% for todo in todos %}
-                <div>{{todo}}</div>
+                <div class="todo">{{todo}}</div>
             {% endfor %}
+        </div>
+        <div class="todoform">
+            <form action="" method="post">
+                {{todoform.title}}
+            </form>
         </div>
     </div>
 </div>
