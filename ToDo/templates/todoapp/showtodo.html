@@ -40,7 +40,7 @@
         <div class="col-7 sidebar-item" id="item2">
             <a href="{% url 'show' list.id %}">{{list}}</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">10</div>
+        <div class="col-2 sidebar-item" id="item3">{{todo_count}}</div>
     </div>
     {% endfor %}
 
@@ -67,6 +67,7 @@
         </div>
         <div class="todoform">
             <form action="" method="post">
+                {% csrf_token%}
                 {{todoform.title}}
             </form>
         </div>

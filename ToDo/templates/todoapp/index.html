@@ -7,20 +7,24 @@
         <input type="text" class="search" placeholder="Search">
     </div>
 
-    <div class="container"><hr></div>
+    <div class="container">
+        <hr>
+    </div>
 
     <div>
         User Info
     </div>
 
-    <div class="container"><hr></div>
+    <div class="container">
+        <hr>
+    </div>
 
     <div class="row sidebar-side">
         <div class="col-3 sidebar-item" id="item1"><i class="fas fa-home" style="color: #3063AB;"></i></div>
         <div class="col-7 sidebar-item" id="item2">
             <a href="{% url 'show' 9 %}" style="color: #3063AB;">Tasks</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">2</div>
+        <div class="col-2 sidebar-item" id="item3">{{task_count}}</div>
     </div>
     <div class="row sidebar-side">
         <div class="col-3 sidebar-item" id="item1"><i class="fas fa-star" style="color: #AC395D;"></i></div>
@@ -40,7 +44,7 @@
         <div class="col-7 sidebar-item" id="item2">
             <a href="{% url 'show' list.id %}">{{list}}</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">10</div>
+        <div class="col-2 sidebar-item" id="item3">{{count}}</div>
     </div>
     {% endfor %}
 
@@ -56,6 +60,22 @@
 
 {% block content %}
 <div class="content">
-    
+    <div class="wrapper">
+        <div class="head">
+            <h3>{{curlist}}</h3>
+        </div>
+        <div class="todolist">
+            {% for task in tasks %}
+            <div class="todo">{{task}}</div>
+            {% endfor %}
+        </div>
+        <div class="todoform">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{todoform.title}}
+            </form>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
