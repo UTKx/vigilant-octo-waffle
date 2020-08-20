@@ -42,9 +42,9 @@
     <div class="row sidebar-side">
         <div class="col-3 sidebar-item" id="item1"><i class="fas fa-bars" style="color: #ADADAD;"></i></div>
         <div class="col-7 sidebar-item" id="item2">
-            <a href="{% url 'show' list.id %}">{{list}}</a>
+            <a href="{% url 'show' list.id %}">{{list.name}}</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">{{count}}</div>
+        <div class="col-2 sidebar-item" id="item3">{{list.count}}</div>
     </div>
     {% endfor %}
 
