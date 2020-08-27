@@ -13,6 +13,12 @@
     margin-top: 30px;
 }
 
+div.todolist {
+    width: 1000px;
+    height: 420px;
+    overflow: auto;
+}
+
 .todolist a {
     text-decoration: none;
     color: black;
@@ -33,10 +39,6 @@
 }
 
 .completed {
-    margin-top: 20px;
-}
-
-.closed-todos {
     margin-top: 20px;
 }
 
@@ -69,3 +71,24 @@
 .todoinput::placeholder {
     color: #936DA7;
 }
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: transparent; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent; 
+  }

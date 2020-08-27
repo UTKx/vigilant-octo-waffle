@@ -7,13 +7,17 @@
         <input type="text" class="search" placeholder="Search">
     </div>
 
-    <div class="container"><hr></div>
+    <div class="container">
+        <hr>
+    </div>
 
     <div>
         User Info
     </div>
 
-    <div class="container"><hr></div>
+    <div class="container">
+        <hr>
+    </div>
 
     <div class="row sidebar-side">
         <div class="col-3 sidebar-item" id="item1"><i class="fas fa-home" style="color: #3063AB;"></i></div>
@@ -61,9 +65,29 @@
             <h3>{{curlist}}</h3>
         </div>
         <div class="todolist">
-            {% for todo in todos %}
-                <div class="todo">{{todo}}</div>
-            {% endfor %}
+            <div class="open-todos">
+                {% for todo in todos %}
+                {% if not todo.is_finished %}
+                <a href="{% url 'finished' todo.id %}">
+                    <div class="todo"><input class="checkbox" type="checkbox" id="checkbox"
+                            data-todo-id="{{ todo.id }}">{{todo.title}}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="completed">
+                <h3><span class="badge bg-light text-dark">Completed</span></h3>
+            </div>
+            <div class="closed-todos">
+                {% for todo in todos %}
+                {% if todo.is_finished %}
+                <a href="#">
+                    <div class="todo"><input class="checkbox" type="checkbox" id="checkbox" data-todo-id="{{ task.id }}"
+                            checked="checked" onclick="return false">{{todo.title}}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
         <div class="todoform">
             <form action="" method="post">
