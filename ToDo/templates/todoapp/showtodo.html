@@ -20,14 +20,14 @@
         <div class="col-7 sidebar-item" id="item2">
             <a href="{% url 'show' 9 %}" style="color: #3063AB;">Tasks</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">2</div>
+        <div class="col-2 sidebar-item" id="item3">{{task_count}}</div>
     </div>
     <div class="row sidebar-side">
         <div class="col-3 sidebar-item" id="item1"><i class="fas fa-star" style="color: #AC395D;"></i></div>
         <div class="col-7 sidebar-item" id="item2">
             <a href="{% url 'show' 10 %}" style="color: #AC395D;">Important</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">10</div>
+        <div class="col-2 sidebar-item" id="item3">{{imp_count}}</div>
     </div>
 
     <div class="container">

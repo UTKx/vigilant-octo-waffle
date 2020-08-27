@@ -13,6 +13,21 @@
     margin-top: 30px;
 }
 
+.todolist a {
+    text-decoration: none;
+    color: black;
+}
+
+.checkbox {
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -3px;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+}
+
 .todo {
     background-color: white;
     height: 55px;
@@ -20,6 +35,7 @@
     border-radius: 5px;
     padding: 0 10px;
     margin-top: 2px;
+    vertical-align: middle;
 }
 
 .todoform {
