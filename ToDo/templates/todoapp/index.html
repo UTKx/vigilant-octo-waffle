@@ -65,23 +65,29 @@
             <h3>{{curlist}}</h3>
         </div>
         <div class="todolist">
-            {% for task in tasks %}
-            {% if not task.is_finished %}
-            <a href="{% url 'finished' task.id %}">
-                <div class="todo"><input class="checkbox" type="checkbox" id="checkbox"
-                        data-todo-id="{{ task.id }}">{{task.title}}</div>
-            </a>
-            {% endif %}
-            {% endfor %}
-            <h5>Completed</h5>
-            {% for task in tasks %}
-            {% if task.is_finished %}
-            <a href="">
-                <div class="todo"><input class="checkbox" type="checkbox" id="checkbox" data-todo-id="{{ task.id }}"
-                        checked="checked" onclick="return false">{{task.title}}</div>
-            </a>
-            {% endif %}
-            {% endfor %}
+            <div class="open-todos">
+                {% for task in tasks %}
+                {% if not task.is_finished %}
+                <a href="{% url 'finished' task.id %}">
+                    <div class="todo"><input class="checkbox" type="checkbox" id="checkbox"
+                            data-todo-id="{{ task.id }}">{{task.title}}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="completed">
+                <h6>Completed</h6>
+            </div>
+            <div class="closed-todos">
+                {% for task in tasks %}
+                {% if task.is_finished %}
+                <a href="#">
+                    <div class="todo"><input class="checkbox" type="checkbox" id="checkbox" data-todo-id="{{ task.id }}"
+                            checked="checked" onclick="return false">{{task.title}}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
         <div class="todoform">
             <form action="" method="post">

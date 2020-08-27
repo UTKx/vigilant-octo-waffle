@@ -28,6 +28,18 @@
     border-radius: 50%;
 }
 
+.open-todos {
+    margin-top: 20px;
+}
+
+.completed {
+    margin-top: 20px;
+}
+
+.closed-todos {
+    margin-top: 20px;
+}
+
 .todo {
     background-color: white;
     height: 55px;
