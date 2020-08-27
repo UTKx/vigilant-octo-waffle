@@ -14,8 +14,8 @@
 }
 
 div.todolist {
-    width: 1000px;
-    height: 420px;
+    width: 991px;
+    height: 450px;
     overflow: auto;
 }
 
@@ -34,12 +34,18 @@ div.todolist {
     border-radius: 50%;
 }
 
-.open-todos {
-    margin-top: 20px;
+.badge {
+    background-color: #EDDCF5;
+    color: #936DA7;
+    font-weight: normal;
 }
 
 .completed {
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+.closed-todos {
+    margin-top: 14px;
 }
 
 .todo {
