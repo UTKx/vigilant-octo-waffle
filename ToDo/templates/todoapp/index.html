@@ -24,14 +24,14 @@
         <div class="col-7 sidebar-item" id="item2">
             <a href="{% url 'show' 9 %}" style="color: #3063AB;">Tasks</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">{{task_count}}</div>
+        <div class="col-2 sidebar-item" id="item3"><span class="badge" id="count">{{task_count}}</span></div>
     </div>
     <div class="row sidebar-side">
         <div class="col-3 sidebar-item" id="item1"><i class="fas fa-star" style="color: #AC395D;"></i></div>
         <div class="col-7 sidebar-item" id="item2">
             <a href="{% url 'show' 10 %}" style="color: #AC395D;">Important</a>
         </div>
-        <div class="col-2 sidebar-item" id="item3">{{imp_count}}</div>
+        <div class="col-2 sidebar-item" id="item3"><span class="badge" id="count">{{imp_count}}</span></div>
     </div>
 
     <div class="container">
@@ -39,12 +39,14 @@
     </div>
 
     {% for list in lists %}
-    <div class="row sidebar-side">
-        <div class="col-3 sidebar-item" id="item1"><i class="fas fa-bars" style="color: #ADADAD;"></i></div>
-        <div class="col-7 sidebar-item" id="item2">
-            <a href="{% url 'show' list.id %}">{{list.name}}</a>
+    <div class="sidebar-side-scroll">
+        <div class="row sidebar-side">
+            <div class="col-3 sidebar-item" id="item1"><i class="fas fa-bars" style="color: #ADADAD;"></i></div>
+            <div class="col-7 sidebar-item" id="item2">
+                <a href="{% url 'show' list.id %}">{{list.name}}</a>
+            </div>
+            <div class="col-2 sidebar-item" id="item3"><span class="badge" id="count">{{list.count}}</span></div>
         </div>
-        <div class="col-2 sidebar-item" id="item3">{{list.count}}</div>
     </div>
     {% endfor %}
 
@@ -76,15 +78,15 @@
                 {% endfor %}
             </div>
             <div class="completed">
-                <h4><span class="badge"><i class="fa fa-caret-down"
-                            aria-hidden="true"></i>&nbsp;Completed</span></h4>
+                <h4><span class="badge"><i class="fa fa-caret-down" aria-hidden="true"></i>&nbsp;Completed</span></h4>
             </div>
             <div class="closed-todos">
                 {% for task in tasks %}
                 {% if task.is_finished %}
                 <a href="#">
-                    <div class="todo"><input class="checkbox" type="checkbox" id="checkbox" data-todo-id="{{ task.id }}"
-                            checked="checked" onclick="return false"><del>{{task.title}}</del></div>
+                    <div class="todo closed"><input class="checkbox" type="checkbox" id="checkbox"
+                            data-todo-id="{{ task.id }}" checked="checked"
+                            onclick="return false"><del>{{task.title}}</del></div>
                 </a>
                 {% endif %}
                 {% endfor %}
