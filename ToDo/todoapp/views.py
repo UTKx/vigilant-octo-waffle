@@ -70,6 +70,4 @@ def is_finished(request, todo_id):
     todo.is_finished = True
     todo.save()
 
-    print('>>>', request.META.get('HTTP_REFERER'))
-
     return redirect(request.META.get('HTTP_REFERER'))

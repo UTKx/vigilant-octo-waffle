@@ -48,11 +48,11 @@
     </div>
     {% endfor %}
 
-    <div class="myform">
+    <div class="input-group myform">
         <form action="" method="post">
             {% csrf_token %}
             {{listform.name}}
-            <button class="listbtn fas fa-plus"></button>
+            <button class="listbtn fas fa-plus" type="button"></button>
         </form>
     </div>
 </div>
@@ -84,7 +84,7 @@
                 {% if task.is_finished %}
                 <a href="#">
                     <div class="todo"><input class="checkbox" type="checkbox" id="checkbox" data-todo-id="{{ task.id }}"
-                            checked="checked" onclick="return false">{{task.title}}</div>
+                            checked="checked" onclick="return false"><del>{{task.title}}</del></div>
                 </a>
                 {% endif %}
                 {% endfor %}
