@@ -19,6 +19,6 @@ class TodoForm(forms.ModelForm):
         fields = ['title']
 
         widgets = {
-            'title' : forms.TextInput(attrs={'class': 'todoinput', 'placeholder': 'Add a task',})
+            'title' : forms.TextInput(attrs={'class': 'todoinput', 'placeholder': 'Add a todo',})
         }
         

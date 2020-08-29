@@ -3,6 +3,7 @@
     width: 100%;
     right: -1000;
     background: #F2E7F9;
+    z-index: -1;
 }
 
 .wrapper {
@@ -44,7 +45,7 @@ div.todolist {
 .badge {
     background-color: #E9DBF0;
     color: #936DA7;
-    font-weight: normal;
+    font-weight: 500;
 }
 
 .completed {
