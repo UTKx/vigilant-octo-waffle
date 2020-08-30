@@ -66,6 +66,34 @@ div.todolist {
     vertical-align: middle;
 }
 
+.del-todo {
+    width: 40px;
+    height: 40px;
+    margin-top: 7.5px;
+    margin-right: 10px;
+    float: right;
+    display: none;
+    /* background-color: #F2E7F9; */
+}
+
+.edit-todo {
+    width: 40px;
+    height: 40px;
+    margin-top: 7.5px;
+    margin-right: 5px;
+    float: right;
+    display: none;
+    /* background-color: #F2E7F9; */
+}
+
+.todo:hover .del-todo {
+    display: block;
+}
+
+.todo:hover .edit-todo {
+    display: block;
+}
+
 .closed {
     color: #6E6E6E;
 }

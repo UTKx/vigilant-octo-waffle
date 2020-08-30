@@ -49,15 +49,16 @@
                 <div class="dropdown">
                     <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #E3D4F1;"></i>
+                        <i style="color: #E3D4F1; font-size: 16px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'editlist' list.id %}">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        <a class="dropdown-item drop1" href="{% url 'editlist' list.id %}">
+                            <i style="color:#9C528B; font-size: 16px;" class="fa fa-pencil-square-o"
+                                aria-hidden="true"></i>
                             &nbsp;Edit
                         </a>
-                        <a class="dropdown-item" href="{% url 'deletelist' list.id %}">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        <a class="dropdown-item drop2" href="{% url 'deletelist' list.id %}">
+                            <i style="color: #FF6978; font-size: 16px;" class="fa fa-trash" aria-hidden="true"></i>
                             &nbsp;Delete</a>
                     </div>
                 </div>
@@ -89,7 +90,13 @@
                 {% if not task.is_finished %}
                 <a href="{% url 'finished' task.id %}">
                     <div class="todo"><input class="checkbox" type="checkbox" id="checkbox"
-                            data-todo-id="{{ task.id }}">{{task.title}}</div>
+                            data-todo-id="{{ task.id }}">{{task.title}}
+                        <a href="#">
+                            <button class="btn btn-light del-todo">
+                                <i style="color: #9C528B;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </button>
+                        </a>
+                    </div>
                 </a>
                 {% endif %}
                 {% endfor %}
@@ -102,8 +109,19 @@
                 {% if task.is_finished %}
                 <a href="#">
                     <div class="todo closed"><input class="checkbox" type="checkbox" id="checkbox"
-                            data-todo-id="{{ task.id }}" checked="checked"
-                            onclick="return false"><del>{{task.title}}</del></div>
+                         data-todo-id="{{ task.id }}" checked="checked"
+                         onclick="return false"><del>{{task.title}}</del>
+                        <a href="#">
+                            <button class="btn btn-light del-todo">
+                                <i style="color: #FF6978;" class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button class="btn btn-light edit-todo">
+                                <i style="color: #9C528B;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </button>
+                        </a>
+                    </div>
                 </a>
                 {% endif %}
                 {% endfor %}
