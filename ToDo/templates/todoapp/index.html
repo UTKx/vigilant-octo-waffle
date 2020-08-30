@@ -47,16 +47,17 @@
             </div>
             <div class="col-2">
                 <div class="dropdown">
-                    <a class="btn btn-light" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #CCD4DB;"></i>
+                        <i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #E3D4F1;"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'editlist' list.id %}" >
+                        <a class="dropdown-item" href="{% url 'editlist' list.id %}">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             &nbsp;Edit
                         </a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-trash" aria-hidden="true"></i>
+                        <a class="dropdown-item" href="{% url 'deletelist' list.id %}">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
                             &nbsp;Delete</a>
                     </div>
                 </div>

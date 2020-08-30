@@ -66,7 +66,6 @@ def getOrCreateTodo(request, todolist_id):
 
 
 def editTodoList(request, todolist_id):
-    # print('>>>>', todolist_id)
     todolist = TodoList.objects.get(id=todolist_id)
     todolist_form = TodoListForm(request.POST, instance=todolist)
     if todolist_form.is_valid():
@@ -74,19 +73,14 @@ def editTodoList(request, todolist_id):
         return redirect(index)
     return render(request, 'todoapp/editlist.html', {'todolist': todolist})
 
-
-# def editTodoListShow(request, todolist_id):
-#     todolist = TodoList.objects.get(id=todolist_id)
-#     todolist_form = TodoListForm(request.POST, instance=todolist)
-#     if todolist_form.is_valid():
-#         todolist_form.save()
-#         return redirect(request.META.get('HTTP_REFERER'))
-#     return render(request, 'todoapp/showtodo.html', {'todolist': todolist})
+def deleteTodoList(request, todolist_id):
+    todolist = TodoList.objects.get(id=todolist_id)
+    todolist.delete()
+    return redirect(request.META.get('HTTP_REFERER'))
 
 
 def isFinished(request, todo_id):
     todo = Todo.objects.get(id=todo_id)
     todo.is_finished = True
     todo.save()
-
     return redirect(request.META.get('HTTP_REFERER'))

@@ -40,6 +40,10 @@
     color: #7D5294;
 }
 
+.dropdpwn-menu {
+    min-width: 50px !important;
+}
+
 #count {
     background-color: #E8E8E8;
     color: black;
