@@ -73,6 +73,7 @@ def editTodoList(request, todolist_id):
         return redirect(index)
     return render(request, 'todoapp/editlist.html', {'todolist': todolist})
 
+
 def deleteTodoList(request, todolist_id):
     todolist = TodoList.objects.get(id=todolist_id)
     todolist.delete()

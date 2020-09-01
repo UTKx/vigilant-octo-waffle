@@ -52,6 +52,10 @@ div.todolist {
     margin-top: 10px;
 }
 
+.completed h4 {
+    font-size: 23px;
+}
+
 .closed-todos {
     margin-top: 14px;
 }
@@ -73,6 +77,7 @@ div.todolist {
     margin-right: 10px;
     float: right;
     display: none;
+    outline: none;
     /* background-color: #F2E7F9; */
 }
 
@@ -92,10 +97,6 @@ div.todolist {
 
 .todo:hover .edit-todo {
     display: block;
-}
-
-.closed {
-    color: #6E6E6E;
 }
 
 .todoform {

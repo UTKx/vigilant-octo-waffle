@@ -47,7 +47,7 @@
             </div>
             <div class="col-2">
                 <div class="dropdown">
-                    <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    <a class="btn edit" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i style="color: #E3D4F1; font-size: 16px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </a>
@@ -92,8 +92,8 @@
                     <div class="todo"><input class="checkbox" type="checkbox" id="checkbox"
                             data-todo-id="{{ task.id }}">{{task.title}}
                         <a href="#">
-                            <button class="btn btn-light del-todo">
-                                <i style="color: #9C528B;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            <button class="btn edit-todo">
+                                <i style="color: #845195;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </button>
                         </a>
                     </div>
@@ -110,17 +110,17 @@
                 <a href="#">
                     <div class="todo closed"><input class="checkbox" type="checkbox" id="checkbox"
                          data-todo-id="{{ task.id }}" checked="checked"
-                         onclick="return false"><del>{{task.title}}</del>
+                         onclick="return false"><del style="color: #6E6E6E;">{{task.title}}</del>
                         <a href="#">
-                            <button class="btn btn-light del-todo">
+                            <button class="btn del-todo">
                                 <i style="color: #FF6978;" class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </a>
-                        <a href="#">
+                        <!-- <a href="#">
                             <button class="btn btn-light edit-todo">
                                 <i style="color: #9C528B;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </button>
-                        </a>
+                        </a> -->
                     </div>
                 </a>
                 {% endif %}
