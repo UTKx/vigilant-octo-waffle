@@ -10,7 +10,7 @@ html {
     color: #7D5294;
 }
 
-.listinput {
+.todoinput {
     width: 675px;
     border: none;
     outline: none;
@@ -22,7 +22,7 @@ html {
     float: left;
 }
 
-.listbtn {
+.todobtn {
     font-weight: 00;
     height: 55px;
     line-height: 55px;

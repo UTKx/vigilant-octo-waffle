@@ -4,6 +4,7 @@ from . models import TodoList, Todo
 
 # Create your views here.
 
+
 def index(request):
     listform = TodoListForm()
     todoform = TodoForm()
@@ -42,7 +43,7 @@ def getOrCreateTodo(request, todolist_id):
     imp_count = Todo.objects.filter(todolist__id=10).count()
     todoform = TodoForm()
     listform = TodoListForm()
-    
+
     if request.method == 'POST':
         form = TodoListForm(request.POST)
         if form.is_valid():
@@ -76,6 +77,21 @@ def editTodoList(request, todolist_id):
 def deleteTodoList(request, todolist_id):
     todolist = TodoList.objects.get(id=todolist_id)
     todolist.delete()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+def editTodo(request, todo_id):
+    todo = Todo.objects.get(id=todo_id)
+    todo_form = TodoForm(request.POST, instance=todo)
+    if todo_form.is_valid():
+        todo_form.save()
+        return redirect(index)
+    return render(request, 'todoapp/edittodo.html', {'todo': todo})
+
+
+def deleteTodo(request, todo_id):
+    todo = Todo.objects.get(id=todo_id)
+    todo.delete()
     return redirect(request.META.get('HTTP_REFERER'))
 
 

@@ -88,8 +88,8 @@
                 <a href="{% url 'finished' todo.id %}">
                     <div class="todo"><input class="checkbox" type="checkbox" id="checkbox"
                             data-todo-id="{{ todo.id }}">{{todo.title}}
-                        <a href="#">
-                            <button class="btn btn-light del-todo">
+                        <a href="{% url 'edittodo' todo.id %}">
+                            <button class="btn del-todo">
                                 <i style="color: #9C528B;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </button>
                         </a>
@@ -108,14 +108,9 @@
                     <div class="todo closed"><input class="checkbox" type="checkbox" id="checkbox"
                             data-todo-id="{{ task.id }}" checked="checked"
                             onclick="return false"><del>{{todo.title}}</del>
-                        <a href="#">
-                            <button class="btn btn-light del-todo">
+                        <a href="{% url 'deletetodo' todo.id %}">
+                            <button class="btn del-todo">
                                 <i style="color: #FF6978;" class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                        </a>
-                        <a href="#">
-                            <button class="btn btn-light edit-todo">
-                                <i style="color: #9C528B;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </button>
                         </a>
                     </div>

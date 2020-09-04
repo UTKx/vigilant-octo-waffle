@@ -91,9 +91,9 @@
                 <a href="{% url 'finished' task.id %}">
                     <div class="todo"><input class="checkbox" type="checkbox" id="checkbox"
                             data-todo-id="{{ task.id }}">{{task.title}}
-                        <a href="#">
+                        <a href="{% url 'edittodo' task.id %}" title="Edit Todo">
                             <button class="btn edit-todo">
-                                <i style="color: #845195;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <i style="color: #CB9CE7;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </button>
                         </a>
                     </div>
@@ -109,18 +109,13 @@
                 {% if task.is_finished %}
                 <a href="#">
                     <div class="todo closed"><input class="checkbox" type="checkbox" id="checkbox"
-                         data-todo-id="{{ task.id }}" checked="checked"
-                         onclick="return false"><del>{{task.title}}</del>
-                        <a href="#">
+                            data-todo-id="{{ task.id }}" checked="checked"
+                            onclick="return false"><del>{{task.title}}</del>
+                        <a href="{% url 'deletetodo' task.id %}" title="Delete Todo">
                             <button class="btn del-todo">
                                 <i style="color: #FF6978;" class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </a>
-                        <!-- <a href="#">
-                            <button class="btn btn-light edit-todo">
-                                <i style="color: #9C528B;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            </button>
-                        </a> -->
                     </div>
                 </a>
                 {% endif %}
