@@ -60,6 +60,10 @@ div.todolist {
     margin-top: 14px;
 }
 
+del {
+    color: #6E6E6E;
+}
+
 .todo {
     background-color: white;
     height: 55px;

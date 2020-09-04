@@ -47,7 +47,6 @@ def getOrCreateTodo(request, todolist_id):
         form = TodoListForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('show')
     else:
         form = TodoListForm()
 
