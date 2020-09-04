@@ -1,0 +1,56 @@
+html {
+    background-color: #F2E7F9;
+}
+
+.modal-content {
+    background-color: #F2E7F9;
+}
+
+.modal-title {
+    color: #7D5294;
+}
+
+.listinput {
+    width: 675px;
+    border: none;
+    outline: none;
+    height: 55px;
+    padding: 10px;
+    background-color: #EDDCF5;
+    color: #936DA7;
+    border-radius: 5px;
+    float: left;
+}
+
+.listbtn {
+    height: 55px;
+    line-height: 55px;
+    border-radius: 5px;
+    width: 90px;
+    background-color: #E9DBF0;
+    border: none;
+    color: #936DA7;
+    /* position: absolute; */
+    float: right;
+}
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
