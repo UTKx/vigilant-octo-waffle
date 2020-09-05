@@ -11,6 +11,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/edittodo.css' %}">
+</head>
+
+<body>
+    <div class="modal fade" id="todoModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter new todo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="text" name="title" class="todoinput" value="{{todo.title}}">
+                        <button class="todobtn" type="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -25,34 +51,7 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/5f5dfb5344.js" crossorigin="anonymous"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/edittodo.css' %}">
-</head>
-
-<body>
-    <div class="modal fade" id="listModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enter new list name</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <!-- <div><h1>EDIT</h1></div> -->
-                <div class="modal-body">
-                    <form method="post">
-                        {% csrf_token %}
-                        <input type="text" name="name" class="todoinput" value="{{todo.title}}">
-                        <button class="todobtn" type="submit">Update</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="{% static 'js/edit.js' %}"></script>
+    <script src="{% static 'js/edittodo.js' %}"></script>
 </body>
 
 </html>

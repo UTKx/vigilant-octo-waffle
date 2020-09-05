@@ -23,7 +23,7 @@ html {
 }
 
 .todobtn {
-    font-weight: 00;
+    font-weight: bold;
     height: 55px;
     line-height: 55px;
     border-radius: 5px;
@@ -31,7 +31,6 @@ html {
     background-color: #DCC5E7;
     border: none;
     color: #936DA7;
-    /* position: absolute; */
     float: right;
 }
 
