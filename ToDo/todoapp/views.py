@@ -70,7 +70,7 @@ def editTodoList(request, todolist_id):
     todolist_form = TodoListForm(request.POST, instance=todolist)
     if todolist_form.is_valid():
         todolist_form.save()
-        return redirect(request.META.get('HTTP_REFERER'))
+        return redirect(index)
     return render(request, 'todoapp/editlist.html', {'todolist': todolist})
 
 
@@ -85,7 +85,7 @@ def editTodo(request, todo_id):
     todo_form = TodoForm(request.POST, instance=todo)
     if todo_form.is_valid():
         todo_form.save()
-        return redirect(request.META.get('HTTP_REFERER'))
+        return redirect(index)
     return render(request, 'todoapp/edittodo.html', {'todo': todo})
 
 
