@@ -9,7 +9,7 @@ def index(request):
     listform = TodoListForm()
     todoform = TodoForm()
     lists = TodoList.objects.all()[2:]
-    curlist = TodoList.objects.get(id=9)
+    curlist = TodoList.objects.get(id=1)
     tasks = Todo.objects.filter(todolist__id='1')
     task_count = Todo.objects.filter(todolist__id=1).count()
     imp_count = Todo.objects.filter(todolist__id=2).count()
