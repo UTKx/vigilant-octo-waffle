@@ -10,9 +10,9 @@ def index(request):
     todoform = TodoForm()
     lists = TodoList.objects.all()[2:]
     curlist = TodoList.objects.get(id=9)
-    tasks = Todo.objects.filter(todolist__id='9')
-    task_count = Todo.objects.filter(todolist__id=9).count()
-    imp_count = Todo.objects.filter(todolist__id=10).count()
+    tasks = Todo.objects.filter(todolist__id='1')
+    task_count = Todo.objects.filter(todolist__id=1).count()
+    imp_count = Todo.objects.filter(todolist__id=2).count()
 
     if request.method == 'POST':
         form = TodoListForm(request.POST)
@@ -25,7 +25,7 @@ def index(request):
         form = TodoForm(request.POST)
         if form.is_valid():
             title = form.cleaned_data['title']
-            instance = Todo(title=title, todolist_id='9')
+            instance = Todo(title=title, todolist_id='1')
             instance.save()
     else:
         form = TodoForm()
@@ -39,8 +39,8 @@ def getOrCreateTodo(request, todolist_id):
     lists = TodoList.objects.all()[2:]
     curlist = TodoList.objects.get(id=todolist_id)
     todos = Todo.objects.filter(todolist__id=todolist_id)
-    task_count = Todo.objects.filter(todolist__id=9).count()
-    imp_count = Todo.objects.filter(todolist__id=10).count()
+    task_count = Todo.objects.filter(todolist__id=1).count()
+    imp_count = Todo.objects.filter(todolist__id=2).count()
     todoform = TodoForm()
     listform = TodoListForm()
 
